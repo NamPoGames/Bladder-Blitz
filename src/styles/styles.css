@@ -13,7 +13,7 @@ body, html {
 
 /* Стили для фона */
 body {
-    background-image: url('fon.png');
+    background-image: url('src/assets/images/fon.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

@@ -86,24 +86,24 @@ let lastNotificationTime = 0;
 // Фразы для уведомлений
 const phrases = [
     "Попади в цель!",
-    "Ты справишься!",
-    "Продолжай в том же духе!",
+    "Не жалей мочи!",
+    "Кто тут папа?",
     "Отличная работа!",
     "Ты на высоте!"
 ];
 
 // Загрузка изображений
 const toiletImg = new Image();
-toiletImg.src = 'toilet.png';
+toiletImg.src = 'src/assets/images/toilet.png';
 
 const bonus1Img = new Image();
-bonus1Img.src = 'bonus.png';
+bonus1Img.src = 'src/assets/images/bonus.png';
 
 const bonus2Img = new Image();
-bonus2Img.src = 'bonus2.png';
+bonus2Img.src = 'src/assets/images/bonus2.png';
 
 const lifeImg = new Image();
-lifeImg.src = 'life.png';
+lifeImg.src = 'src/assets/images/life.png';
 
 // Отслеживание загрузки ресурсов
 let resourcesLoaded = 0;

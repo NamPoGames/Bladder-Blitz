@@ -5,7 +5,7 @@
     <title>Струя мочи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Подключение стилей -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
@@ -13,9 +13,9 @@
     <div id="scoreboard">Баланс: 0</div>
     <div id="highscore">Лучший счёт: 0</div>
     <div id="lives">
-        <img id="life3" src="life.png" alt="Жизнь 3" style="width: 40px;">
-        <img id="life2" src="life.png" alt="Жизнь 2" style="width: 40px;">
-        <img id="life1" src="life.png" alt="Жизнь 1" style="width: 40px;">
+        <img id="life3" src="src/assets/images/life.png" alt="Жизнь 3" style="width: 40px;">
+        <img id="life2" src="src/assets/images/life.png" alt="Жизнь 2" style="width: 40px;">
+        <img id="life1" src="src/assets/images/life.png" alt="Жизнь 1" style="width: 40px;">
     </div>
     <div id="progressBar"><div id="progressFill"></div></div>
     <div id="urineBar"><div id="urineFill"></div><div id="urineBonusOverlay"></div></div>
@@ -34,17 +34,17 @@
     </div>
 
     <!-- Звуки -->
-    <audio id="hitSound" src="hit.mp3"></audio>
-    <audio id="upgradeSound" src="upgrade.mp3"></audio>
-    <audio id="levelUpSound" src="levelup.mp3"></audio>
-    <audio id="lifeLostSound" src="life_lost.mp3"></audio>
-    <audio id="streamSound" src="stream.mp3" loop></audio>
-    <audio id="backgroundMusic" src="background_music.mp3" loop></audio>
-    <audio id="buttonSound" src="button_click.mp3"></audio>
-    <audio id="gameOverSound" src="game_over.mp3"></audio>
+    <audio id="hitSound" src="src/assets/sounds/hit.mp3"></audio>
+    <audio id="upgradeSound" src="src/assets/sounds/upgrade.mp3"></audio>
+    <audio id="levelUpSound" src="src/assets/sounds/levelup.mp3"></audio>
+    <audio id="lifeLostSound" src="src/assets/sounds/life_lost.mp3"></audio>
+    <audio id="streamSound" src="src/assets/sounds/stream.mp3" loop></audio>
+    <audio id="backgroundMusic" src="src/assets/sounds/background_music.mp3" loop></audio>
+    <audio id="buttonSound" src="src/assets/sounds/button_click.mp3"></audio>
+    <audio id="gameOverSound" src="src/assets/sounds/game_over.mp3"></audio>
 
     <!-- Подключение скриптов -->
-    <script src="game.js"></script>
+    <script src="src/scripts/game.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         // Инициализация Telegram WebApp
