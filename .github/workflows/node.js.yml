@@ -1,0 +1,49 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, 
+# build the source code, run tests, and deploy the project to Vercel
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI with Vercel Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    # Установка Node.js и кэширование npm
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    # Установка зависимостей проекта
+    - run: npm ci
+
+    # Сборка проекта (если скрипт build существует в package.json)
+    - run: npm run build --if-present
+    
+    # Запуск тестов
+    - run: npm test
+
+    # Шаг деплоя на Vercel
+    - name: Deploy to Vercel
+      run: |
+        npm install -g vercel
+        vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      env:
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}   # добавь свой Vercel Organization ID
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} # добавь свой Vercel Project ID
