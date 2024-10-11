@@ -1,6 +1,16 @@
 {
+  "name": "bladder-blitz",
+  "version": "1.0.0",
+  "description": "Bladder Blitz Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"No tests available\""
+  },
   "dependencies": {
     "dotenv": "^16.4.5",
     "telegraf": "^4.16.3"
-  }
+  },
+  "author": "NamPoGames",
+  "license": "MIT"
 }
