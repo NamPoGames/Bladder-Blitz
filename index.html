@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Струя мочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="totalScore">Всего: 0</div>
+    <div id="scoreboard">Баланс: 0</div>
+    <div id="highscore">Лучший счёт: 0</div>
+    <div id="lives">
+        <img id="life3" src="life.png" alt="Жизнь 3" style="width: 40px;">
+        <img id="life2" src="life.png" alt="Жизнь 2" style="width: 40px;">
+        <img id="life1" src="life.png" alt="Жизнь 1" style="width: 40px;">
+    </div>
+    <div id="progressBar"><div id="progressFill"></div></div>
+    <div id="urineBar"><div id="urineFill"></div><div id="urineBonusOverlay"></div></div>
+    <div id="upgrades">
+        <div class="upgrade-container"><button id="powerUpgrade">Напор (50 монет)</button></div>
+        <div class="upgrade-container"><button id="capacityUpgrade">Запас мочи (50 монет)</button></div>
+    </div>
+    <div id="gameOver">
+        <p>GAME OVER!</p>
+        <button id="restartButton">Начать заново</button>
+    </div>
+    <div id="levelNotification"></div>
+    <div id="splashScreen">
+        <p>"Что может быть бесполезнее незаряженного пистолета?"<br>— Энтони «Тони» Сопрано</p>
+        <button id="startButton">Начать игру</button>
+    </div>
+
+    <!-- Звуки -->
+    <audio id="hitSound" src="hit.mp3"></audio>
+    <audio id="upgradeSound" src="upgrade.mp3"></audio>
+    <audio id="levelUpSound" src="levelup.mp3"></audio>
+    <audio id="lifeLostSound" src="life_lost.mp3"></audio>
+    <audio id="streamSound" src="stream.mp3" loop></audio>
+    <audio id="backgroundMusic" src="background_music.mp3" loop></audio>
+    <audio id="buttonSound" src="button_click.mp3"></audio>
+    <audio id="gameOverSound" src="game_over.mp3"></audio>
+
+    <!-- Подключение скриптов -->
+    <script src="game.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Инициализация Telegram WebApp
+        const tg = window.Telegram.WebApp;
+
+        // Убедимся, что WebApp готово
+        tg.ready();
+
+        // Разворачиваем WebApp на полный экран
+        tg.expand();
+
+        // Обработка цветовой схемы Telegram
+        if (tg.colorScheme === "dark") {
+            document.body.classList.add('dark-theme');
+        }
+
+        // Устанавливаем основную кнопку
+        tg.MainButton.setText("Начать игру");
+        tg.MainButton.show();
+
+        // Обработка нажатия основной кнопки
+        tg.onEvent('mainButtonClicked', function() {
+            startGame(); // Запускаем игру при нажатии основной кнопки
+            tg.MainButton.hide(); // Скрываем основную кнопку после запуска
+        });
+    </script>
+</body>
+</html>

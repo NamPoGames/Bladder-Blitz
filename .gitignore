@@ -1,0 +1,49 @@
+# macOS специфические файлы
+.DS_Store
+
+# Лог-файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Папки для Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Исходные карты
+*.map
+
+# Файлы окружения
+.env
+
+# Локальные конфигурационные файлы, которые могут содержать личные данные
+.idea/
+.vscode/
+
+# Папки для кэша
+.cache/
+dist/
+
+# Логи npm и Yarn
+npm-debug.log*
+yarn-debug.log*
+
+# Файлы сборки или временные файлы
+build/
+temp/
+tmp/
+
+# Vercel файлы
+.vercel/
+.vercel/output/
+
+# Логи
+logs/
+*.log
+
+# Конфигурации SSH
+.ssh/
+.ssh_config
+.ssh_known_hosts
